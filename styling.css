@@ -1,0 +1,374 @@
+<style type="text/css">
+     .container{
+     	/*background-color:grey;*/
+          height:100%;
+          width:100%;
+     	overflow:hidden;
+         
+     }
+     canvas{
+          background-color:black;
+          position: absolute;
+          opacity:1;
+          width: 100%;
+          height:100%;
+          z-index=-1;
+     }
+     .sidenav{
+           
+
+     }
+     .sidenav .sidenav_bar{
+          font-size: 30px;
+          cursor: pointer;
+     }
+       .nav-icon {
+           position: absolute;
+           top:4%;
+           left:25%;
+           height:6%;
+           width:70%;
+           background-color:rgb(45, 45, 93) ;
+           list-style-type: none;
+           text-decoration: none;
+     }
+      .nav-icon  a
+      {
+          padding: 15px 15px;
+          color:orange;
+          display: block;
+          font-size:100%;
+          text-decoration: none;
+          list-style-type: none;
+          float:right;
+          text-align: center;
+      }
+      .nav-icon a:hover{
+          display: block;
+          color:cyan;
+          background-color:black;
+          text-decoration: none;
+      }
+      .nav-icon .icon #toggle-btn{
+        position: absolute;
+         background-color: rgb(45, 45, 93);
+         border:none;
+         left:95%;
+         top:0%;
+         height:100%;
+         width:5%;
+         display: none;
+     }
+     @media(max-width: 900px)
+     {
+         .nav-icon .icon #toggle-btn{
+          display: block;
+         }
+     }
+      .nav-icon .icon #toggle-btn span{
+            background-color:black;
+            display: block;
+            width:30px;
+            height:5px;
+            margin:5px 0px;
+     }
+     .container .sidebar{
+     	height:84.3%;
+     	width:15%;
+          top:10.37%;
+          left:10%;
+     	overflow:hidden; /*avoids scroll*/
+     	position: fixed; 
+     	background-color:rgb(45, 45, 93);
+          opacity:1;
+           outline-color:black;
+          outline-style: solid;
+          list-style-type: none;
+
+     }
+     .container .sidebar .sidebar_sidenav a{
+     	padding: 10px;
+     	color:red;
+     	display: block;
+     	font-size:20px;
+          text-decoration: none;
+          text-align: center;
+      transform: sidebar 400ms linear;
+     }
+     @keyframes sidebar{
+           0%{
+
+           }
+     }
+     .container .sidebar .sidebar_sidenav a:hover{
+           display: block;
+     	color:cyan;
+           background-color: black;
+     }
+     .container .sidebar .sidebar_sidenav .sidenav_item{ 
+          display: block;
+          padding: 15px;
+     }
+     @media screen and (min-width:900px)  
+     {
+           /*height>=900px*/
+          .nav-icon{
+            display:none;
+          }
+          /*here you can change any of the stylings acoording to scree width */
+     }
+      @media screen and (max-width: 900px)
+     {
+          .nav-icon{
+            display:block;
+          }
+          .sidebar{
+            display:none;
+          }
+          /*here you can change any of the stylings acoording to scree width */
+     }
+     .container .sidebar .sidebar_footer{
+          position: absolute;
+          top:90%;
+          left:15%;
+     }
+     .container .sidebar .sidebar_footer .footer_legal{
+          position: fixed;
+          color:black;
+     }
+     .container .main_content{
+          top:10%;
+          left:25%;
+          width:70%;
+          height:85%;
+          position:fixed;
+          background-color: black;
+     }
+     .container .main_content .main_headbox{
+          position: absolute;
+          top:10%;
+          left:5%;
+          right:5%;
+          height:10%;
+          background-color:skyblue;
+          opacity:0.5;
+          outline-color:black;
+          outline-style: solid;
+     }
+     .container .main_content .main_headbox .main_heading{
+          position:absolute;
+          font-weight:1000;
+          left:5vw;
+          top:1vh;
+          font-size:2.5vw;/*viewport width to make adjust text in the container when window is resized*/
+          font-family: sans-serif;
+          color:black;
+     }
+     .container .main_content .touch
+     {
+          position: absolute;
+          background-color: cyan;
+          left:1%;
+          top:42%;
+          height:57%;
+          width:98%;
+          opacity: 0.5;
+          color:black;
+          outline-style: solid;
+          outline-color: black;
+     }
+     .container .main_content .touch .divide {
+          padding: 0;
+          margin: 0;
+          list-style : none;
+          display: flex;
+          flex-flow:row wrap;
+          justify-content: space-between;
+     }
+     .container .main_content .touch .divide .box1{
+          position: absolute;
+          background-color:black;
+          opacity: 0.8;
+          padding: 5px;
+          left:5%;
+          top:5%;
+          width :55%;
+          height:90%;
+          font-family: sans-serif;
+          font-weight:300;
+          color:red;
+     }
+     .container .main_content .touch .divide .box1 .para
+     {
+          color:rgb(25, 230, 128);
+          font-size: 20px;
+     }
+     .container .main_content .touch .divide .box2{
+          position: absolute;
+          background-color:red;
+          opacity: 0.8;
+          padding: 5px;
+          right:5%;
+          top:5%;
+          width :35%;
+          height:90%;
+          font-family: sans-serif;
+          font-weight:300;
+          color:black;
+          text-align: center;
+     }
+     .container .main_content .touch .divide .box2 .para
+     {
+          color: rgb(58, 101, 233);
+          font-size:20px;
+     }
+     .container .main_content .touch3
+     {
+          position: absolute;
+          background-color: black;
+          outline-style: solid;
+          outline-color: cyan;
+          top:40%;
+          height:57%;
+          width:98%;
+          opacity: 0.7;
+          color:cyan;
+          margin-left: 10px;
+          margin-top: 10px;
+     }
+     .container .main_content .touch3 .icons{
+          list-style:none;
+           display: flex;
+           flex-wrap: row wrap;
+           justify-content: space-around;
+           padding:30px;
+           text-decoration:none;
+           text-align: center;
+           margin-top: 50px;
+     }
+      .container .main_content .touch3 .icons #e{
+            display: flex;
+     }
+      .container .main_content .touch3 .icons #e .btn-social img:hover{
+          width:170px;
+          height:170px;
+          transition-timing-function: ease-in-out;
+          transition:width 1s height 1s;
+     }
+     .container .main_content .touch3 .paragraph{
+              margin-top: 10px;
+              text-align: center;
+              color:red;
+              font-size: 20px;
+              font-family: sans-serif;
+     }
+     .container .main_content .touch2
+     {
+          position: absolute;
+          background-color: black;
+          outline-style: solid;
+          outline-color: cyan;
+          top:40%;
+          height:57%;
+          width:98%;
+          opacity: 0.7;
+          color:cyan;
+          margin-left: 10px;
+          margin-top: 10px;
+     }
+     .container .main_content .touch4
+     {
+          position: absolute;
+          background-color: black;
+          outline-style: solid;
+          outline-color: cyan;
+          top:40%;
+          height:57%;
+          width:98%;
+          opacity: 0.7;
+          color:cyan;
+          margin-left: 10px;
+          margin-top: 10px;
+     }
+      .container .main_content .touch4 .box {
+          padding: 0;
+          margin: 0;
+          list-style : none;
+          display: flex;
+          flex-flow:row wrap;
+          justify-content: space-between;
+     }
+      .container .main_content .touch4 .box .box_left{
+          position: absolute;
+          background-color:rgb(0, 0, 77);
+          opacity: 0.8;
+          padding: 5px;
+          left:5%;
+          top:5%;
+          width :45%;
+          height:90%;
+          font-family: sans-serif;
+          font-size:20px;
+          font-weight:300;
+          color:rgb(15, 189, 102);
+     }
+     .container .main_content .touch4 .box .box_left .form_input{
+          padding: 20px;
+     }
+      .container .main_content .touch4 .box .box_left .form_radio {
+          position: absolute;
+          padding-left:6%;
+          padding-top:3%;
+     }
+      .container .main_content .touch4 .box .box_left .form_radio .radio-btn2{
+          position: absolute;
+          padding-left:25%;
+     }
+     .container .main_content .touch4 .box .box_left .form_input input{
+          width:80%;
+          height:40px;
+          font-size:20px;
+          color:rgb(5, 199, 102);
+          background-color:black;
+          border:none;
+          opacity: 0.7;
+          font-family: arial;
+     }
+      .container .main_content .touch4 .box .box_right{
+          position: absolute;
+          background-color:rgb(5, 199, 102);
+          opacity: 0.8;
+          padding: 5px;
+          right:5%;
+          top:5%;
+          width :45%;
+          height:90%;
+          font-family: sans-serif;
+          font-weight:300;
+          color:rgb(0, 0, 102);
+          text-align: center;
+     }
+     .container .main_content .touch4 .box .box_right .comments textarea{
+          position: absolute;
+          overflow: hidden;
+          left:10%;
+           width:80%;
+           top:12.5%;
+           height:40%;
+           background-color: indigo;
+           color: yellow;
+           font-style: arial;
+           font-size:18px;
+     }
+     .container .main_content .touch4 .box .box_right  .send-btn  button{
+          position: absolute;
+          top:70%;
+          left:35%;
+          width:30%;
+          height:10%;
+          background-color:black;
+          border:none;
+          color:lightgreen;
+          text-align:center;
+     }
+</style>
