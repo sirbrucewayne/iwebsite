@@ -1,3 +1,3 @@
 # iwebsite
 
-This site is a replica of personal portfolio of me.It is written with html,css,javascript.
+This is a kind of personal portfolio. It is written with html,css,javascript.
